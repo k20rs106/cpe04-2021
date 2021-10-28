@@ -239,8 +239,8 @@
         var m = parseInt(rest/60);
         var s = parseInt(rest - m*60);
 
-        $("#time").html("経過時間：" + time );
-        $("#remain").html("残り時間：" + rest + "秒(" + m + ":" + s + ")");
+        $("#time").html("経過時間：" + time + "秒");
+        $("#remain").html("残り時間：" + rest + "秒(" + m + "分" + s + "秒)");
         analog(rest);
 
         if (rest <= 0){
@@ -251,10 +251,13 @@
 
       if (active2) {
         var time = parseInt( (new Date() - startTime)/1000 );
-        $("#time").html("経過時間：" + time );
+        var m = parseInt(time/60);
+        var s = parseInt(time - m*60);
+        $("#time").html("経過時間：" + time + " 秒(" + m + "分" + s + "秒)" );
       }
       
     } 
+    
     
 
   </script>
