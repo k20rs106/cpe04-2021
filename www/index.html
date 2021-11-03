@@ -227,7 +227,6 @@
       active = false;
       active2 = true;
       startTime = new Date();
-      clock.hide;
       }
     
  
@@ -254,6 +253,7 @@
         var m = parseInt(time/60);
         var s = parseInt(time - m*60);
         $("#time").html("経過時間：" + time + " 秒(" + m + "分" + s + "秒)" );
+        clock().hide;
         if (time > 10){
           var canvas = $("#mycanvas")[0];
           var ctx = canvas.getContext("2d");
